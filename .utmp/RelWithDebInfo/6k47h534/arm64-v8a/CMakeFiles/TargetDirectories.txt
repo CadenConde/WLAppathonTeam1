@@ -1,0 +1,5 @@
+C:/Users/Frueh.22/Documents/Unity projects local/World_Language_Appathon_2025_Test_3/.utmp/RelWithDebInfo/6k47h534/arm64-v8a/CMakeFiles/edit_cache.dir
+C:/Users/Frueh.22/Documents/Unity projects local/World_Language_Appathon_2025_Test_3/.utmp/RelWithDebInfo/6k47h534/arm64-v8a/CMakeFiles/rebuild_cache.dir
+C:/Users/Frueh.22/Documents/Unity projects local/World_Language_Appathon_2025_Test_3/.utmp/RelWithDebInfo/6k47h534/arm64-v8a/GameActivity/CMakeFiles/game.dir
+C:/Users/Frueh.22/Documents/Unity projects local/World_Language_Appathon_2025_Test_3/.utmp/RelWithDebInfo/6k47h534/arm64-v8a/GameActivity/CMakeFiles/edit_cache.dir
+C:/Users/Frueh.22/Documents/Unity projects local/World_Language_Appathon_2025_Test_3/.utmp/RelWithDebInfo/6k47h534/arm64-v8a/GameActivity/CMakeFiles/rebuild_cache.dir

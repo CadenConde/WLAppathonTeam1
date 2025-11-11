@@ -1,0 +1,19 @@
+# ninja log v5
+75	1060	7787173473436142	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	1394c5787db72e7e
+9	961	7787173472422183	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	b9e18de2fea9cf25
+20	922	7787173472064932	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	9c148f1ec7931880
+53	938	7787173472206137	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	ebadc7c972d2b2c7
+44	964	7787173472432369	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	465f8899bf7a8b86
+27	1020	7787173473056150	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f58ec0bb180fd21f
+62	1239	7787173475221973	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	54c1a6a1cc77d6df
+1292	1412	7787173477021750	C:/Users/Frueh.22/Documents/Unity projects local/World_Language_Appathon_2025_Test_3/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6k47h534/obj/arm64-v8a/libgame.so	4b8b83b47e42fb87
+35	1291	7787173475730567	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	9f63d424813d0500
+36	968	7787192890077816	GameActivity/CMakeFiles/game.dir/UGAEntry.cpp.o	9c148f1ec7931880
+18	1007	7787192890453951	GameActivity/CMakeFiles/game.dir/UGAConfiguration.cpp.o	b9e18de2fea9cf25
+50	1025	7787192890619313	GameActivity/CMakeFiles/game.dir/UGAInputKeyEvent.cpp.o	ebadc7c972d2b2c7
+58	1030	7787192890649444	GameActivity/CMakeFiles/game.dir/UGAInputMotionEvent.cpp.o	465f8899bf7a8b86
+43	1164	7787192892018785	GameActivity/CMakeFiles/game.dir/UGADebug.cpp.o	f58ec0bb180fd21f
+76	1262	7787192893022799	GameActivity/CMakeFiles/game.dir/UGASoftKeyboard.cpp.o	1394c5787db72e7e
+67	1384	7787192894277706	GameActivity/CMakeFiles/game.dir/UGAInput.cpp.o	54c1a6a1cc77d6df
+9	1422	7787192894670774	GameActivity/CMakeFiles/game.dir/UGAApplication.cpp.o	9f63d424813d0500
+1423	1542	7787192895918834	C:/Users/Frueh.22/Documents/Unity projects local/World_Language_Appathon_2025_Test_3/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/build/intermediates/cxx/RelWithDebInfo/6k47h534/obj/arm64-v8a/libgame.so	4b8b83b47e42fb87
