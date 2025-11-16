@@ -53,3 +53,5 @@ sysinfo.txt
 *.unitypackage
 # << END Unity
 
+Scripts/.env
+
