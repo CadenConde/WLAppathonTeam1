@@ -66,5 +66,5 @@
     "explorer.fileNesting.patterns": {
         "*.sln": "*.csproj"
     },
-    "dotnet.defaultSolution": "World_Language_Appathon_2025_TEMPLATE.sln"
+    "dotnet.defaultSolution": "WLAppathonTeam1.slnx"
 }
