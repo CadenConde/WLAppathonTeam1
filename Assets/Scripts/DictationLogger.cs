@@ -7,6 +7,7 @@ public class DictationLogger : MonoBehaviour
 {
     public AppDictationExperience dictation;
     public TextMeshPro display;
+    public ConversationManager conversationManager;
 
     void Start()
     {
@@ -39,9 +40,16 @@ public class DictationLogger : MonoBehaviour
         }
     }
 
+
+
     private void OnFull(string text)
     {
         Debug.Log("Full: " + text);
-        if (display != null) display.text = text;
+        if (display != null) display.text = "[Debug] " + text;
+
+        if (conversationManager != null)
+        {
+            conversationManager.OnUserSpeech(text);
+        }
     }
 }
