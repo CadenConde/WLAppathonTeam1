@@ -54,16 +54,16 @@ public class ConversationManager : MonoBehaviour
         {
             text.text = momText;
         }
-        while(!OVRInput.GetDown(OVRInput.Button.Four))
-        {    
-        }
 
         StartCoroutine(StartPhoneSequence());
     }
 
     private IEnumerator StartPhoneSequence()
     {
-        yield return StartCoroutine(AnimatePhoneFromBelow());
+        yield return new WaitUntil(() => OVRInput.GetDown(OVRInput.Button.Four));
+
+        //yield return StartCoroutine(AnimatePhoneFromBelow());
+
         StartCoroutine(PhoneCallSequence());
     }
 
@@ -73,9 +73,7 @@ public class ConversationManager : MonoBehaviour
         // Wait for mom's audio to finish
         yield return new WaitForSeconds(phoneAudioSource.clip.length);
 
-        while (!OVRInput.GetDown(OVRInput.Button.Four))
-        {
-        }
+        yield return new WaitUntil(() => OVRInput.GetDown(OVRInput.Button.Four));
 
         yield return StartCoroutine(AnimatePhoneAndHide());
 

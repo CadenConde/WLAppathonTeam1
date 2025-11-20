@@ -19751,19 +19751,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ConversationManager
   phoneMenu: {fileID: 2051744569}
   phoneAudioSource: {fileID: 1463339302}
-  momText: "\u5ABD\u5ABD\uFF1A        -\u4E09\u676F\u73CD\u73E0\u5976\u8336         
-    -\u4E00\u7897\u725B\u8089 \u9EB5"
+  momText: "\u5BC4\u5BBF\u5ABD\u5ABD\uFF1A \u5E6B\u6211\u8CB7: \u4E09\u676F\u73CD\u73E0\u5976\u8336
+    \u548C\u4E00\u7897\u725B\u8089 \u9EB5\u56DE\u4F86"
   vendorAudioSource: {fileID: 821869320}
-  vendorQuestionAudio: {fileID: 8300000, guid: d0e38ceb357bc9c4f8d46d6c6c175555, type: 3}
-  vendorSuccessAudio: {fileID: 8300000, guid: 0208078d90be7264793342673d0e07d3, type: 3}
-  vendorFailureAudio: {fileID: 8300000, guid: d53d4c412661839459bdf2a1871ed73e, type: 3}
-  expectedPhrase1: "\u4E09\u676F\u73CD\u73E0\u5976\u8336"
-  expectedPhrase2: "\u4E00\u7897\u725B\u8089\u9EB5"
+  vendorQuestionAudio: {fileID: 8300000, guid: 99a200f4643610b4ea2faad5f54b2161, type: 3}
+  vendorSuccessAudio: {fileID: 8300000, guid: 69cd773db21e0a94d97199bcfe5bf7f4, type: 3}
+  vendorFailureAudio: {fileID: 8300000, guid: df4ee9d166da83747acedc69198addf2, type: 3}
+  expectedPhrase1: 
+  expectedPhrase2: 
   expectedPhrase3: 
   expectedPhrase4: 
   interactableCubePrefab: {fileID: 5073570071661481192, guid: 025db12cd0eb9584cbb9653ac141db63, type: 3}
-  bobaPrefab: {fileID: 5407299193703969033, guid: 5f182f0cd05dd3a449d55ba8ac8aff6a, type: 3}
-  beefNoodlePrefab: {fileID: 7997138326034965795, guid: ff9a2f0a1b843a54c93495aca9b990e3, type: 3}
+  bobaPrefab: {fileID: 0}
+  beefNoodlePrefab: {fileID: 0}
   cubeSpawnParent: {fileID: 1624227740}
 --- !u!4 &1907309393
 Transform:
@@ -23515,10 +23515,6 @@ PrefabInstance:
     - target: {fileID: 5073570071661481192, guid: 025db12cd0eb9584cbb9653ac141db63, type: 3}
       propertyPath: m_Name
       value: InteractableCube
-      objectReference: {fileID: 0}
-    - target: {fileID: 5073570071661481192, guid: 025db12cd0eb9584cbb9653ac141db63, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8197411055557467825, guid: 025db12cd0eb9584cbb9653ac141db63, type: 3}
       propertyPath: m_LocalPosition.x
