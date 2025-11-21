@@ -2,6 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class ConversationManager : MonoBehaviour
 {
@@ -23,9 +24,12 @@ public class ConversationManager : MonoBehaviour
     public string expectedPhrase4;  // the correct Mandarin phrase
 
     [Header("Cube Spawn")]
-    public GameObject interactableCubePrefab;
+    // public GameObject interactableCubePrefab;
     public GameObject bobaPrefab;
     public GameObject beefNoodlePrefab;
+    public GameObject stinkyTofuPrefab;
+    public GameObject scallionPancakePrefab;
+
     public Transform cubeSpawnParent;
 
     private ConversationState state = ConversationState.PhoneCall;
@@ -40,8 +44,22 @@ public class ConversationManager : MonoBehaviour
         //debug
         if (OVRInput.GetDown(OVRInput.Button.Three))
         {
-            SpawnCubes(3, 0);
+            SpawnCubes(999, 0);
             HandleSuccess();
+        }
+
+        if (OVRInput.GetDown(OVRInput.Button.Two))
+        {
+            Debug.Log("B pressed, resetting Scene ");
+
+            GameObject[] spawned = GameObject.FindGameObjectsWithTag("SpawnedFood");
+            foreach (GameObject g in spawned)
+            {
+                Destroy(g);
+            }
+
+            state = ConversationState.PhoneCall;
+            StartPhoneCall();;
         }
     }
 
@@ -151,28 +169,37 @@ public class ConversationManager : MonoBehaviour
         string target3 = expectedPhrase3.Trim().ToLower();
         string target4 = expectedPhrase4.Trim().ToLower();
 
-        if (cleaned.Contains(target1))
+        if (n > 0 && cleaned.Contains(target1))
         {
             HandleSuccess();
             SpawnCubes(1, n);
         }
-        else if (cleaned.Contains(target2))
+        else if (n > 0 && cleaned.Contains(target2))
         {
             HandleSuccess();
             SpawnCubes(2, n);
         }
+        else if (n > 0 && cleaned.Contains(target3))
+        {
+            HandleSuccess();
+            SpawnCubes(3, n);
+        }
+        else if (n > 0 && cleaned.Contains(target4))
+        {
+            HandleSuccess();
+            SpawnCubes(4, n);
+        }
         else
         {
+            Debug.Log("playing failure audio");
             HandleFailure();
         }
-
-
     }
 
     private static readonly Dictionary<char, int> chineseToArabic = new Dictionary<char, int>()
     {
         { '一', 1 },
-        { '二', 2 },
+        { '兩', 2 },
         { '三', 3 },
         { '四', 4 },
         { '五', 5 },
@@ -216,45 +243,57 @@ public class ConversationManager : MonoBehaviour
 
     private void SpawnCubes(int item, int n)
     {
-        Debug.Log("Would spawn: " + n);
-        if(item == 1)
-        {
-            for (int i = 0; i < 3; i++)
-            {
-                Vector3[] multiPos = {
-                    new Vector3(0.434f, 0.75f, 0.692f),
-                    new Vector3(0f, 0.75f, 0.784f),
-                    new Vector3(-0.429f, 0.75f, 0.701f)
-                };
-                Instantiate(bobaPrefab, multiPos[i], Quaternion.Euler(-90f, 0f, 0f), cubeSpawnParent);
-            }
-        }
-        else if (item == 2)
-        {
-            for (int i = 0; i < 1; i++)
-            {
-                Vector3 pos = new Vector3(0.0858f, 0.75f, 0.625f);
-                Instantiate(beefNoodlePrefab, pos, Quaternion.Euler(-90f, 0f, 0f), cubeSpawnParent);
-            }
-        }
+        Debug.Log("Would spawn: " + n + " of item " + item);
 
-        else if (item == 3)
+        //debug
+        if (item == 999)
         {
             for (int i = 0; i < 3; i++)
             {
-                Vector3[] multiPos = {
+                Vector3[] multiPos2 = {
                     new Vector3(0.434f, 0.75f, 0.692f),
                     new Vector3(0f, 0.75f, 0.784f),
                     new Vector3(-0.429f, 0.75f, 0.701f)
                 };
-                Instantiate(bobaPrefab, multiPos[i], Quaternion.Euler(-90f, 0f, 0f), cubeSpawnParent);
+                Instantiate(bobaPrefab, multiPos2[i], Quaternion.Euler(-90f, 0f, 0f), cubeSpawnParent);
             }
             for (int i = 0; i < 1; i++)
             {
                 Vector3 pos = new Vector3(0.0858f, 0.75f, 0.625f);
                 Instantiate(beefNoodlePrefab, pos, Quaternion.Euler(-90f, 0f, 0f), cubeSpawnParent);
             }
+            return;
         }
 
+        //else
+        Vector3[] multiPos = {
+            new Vector3(0.434f, 0.75f, 0.692f),
+            new Vector3(0f, 0.75f, 0.784f),
+            new Vector3(0.1f, 0.75f, 0.625f),
+            new Vector3(-0.4f, 0.75f, 0.7f),
+            new Vector3(-0.2f, 0.75f, 0.65f),
+            new Vector3(-0.6f, 0.75f, 0.8f),
+            new Vector3(-0.5f, 0.75f, 0.62f),
+            new Vector3(0.2f, 0.75f, 0.7f)
+        };
+
+        int r = Mathf.CeilToInt(Random.Range(0, 8));
+
+        Dictionary<int, GameObject> getItem = new Dictionary<int, GameObject>
+        {
+            { 1, bobaPrefab },
+            { 2, beefNoodlePrefab },
+            { 3, stinkyTofuPrefab },
+            { 4, scallionPancakePrefab },
+        };
+
+        GameObject prefab = getItem[item];
+
+        for (int i = 0; i < n; i++)
+        {
+            Instantiate(prefab, multiPos[(i + r) % multiPos.Length], Quaternion.Euler(-90f, 0f, 0f), cubeSpawnParent);
+        }
+
+        return;
     }
 }
